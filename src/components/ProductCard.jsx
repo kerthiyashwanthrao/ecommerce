@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ShoppingCartContext } from '../Context/ShoppingCartContext'
 
 const ProductCard = (props) => {
     const itemData = props.itemData
+    const { cart, addToCart, removeFromCart, updateQuantity, getTotal } = useContext(ShoppingCartContext)
+
+    console.log(cart);
+    
+
   return (
     <div style={{maxHeight:"800px",margin:"5px",padding:"10px"}} >
         <img width={200} height={200} alt={itemData.title} src={itemData.image} />
